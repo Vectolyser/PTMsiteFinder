@@ -1,4 +1,4 @@
-from PTMsite_Finder import extract_middle_columns
+from . import extract_middle_columns
 
 
 def ptm_sum(input_df, output_file,

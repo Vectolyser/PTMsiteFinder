@@ -2,10 +2,10 @@ import tkinter as tk
 import logging
 import sys
 
-from PTMsite_Finder.process_sequence import converting
+from ptm_sitefinder.process_sequence import converting
 
 from tkinter import filedialog, messagebox, ttk
-from PTMsite_Finder import UserStoppedException
+from ptm_sitefinder import UserStoppedException
 import threading
 
 # 配置日志

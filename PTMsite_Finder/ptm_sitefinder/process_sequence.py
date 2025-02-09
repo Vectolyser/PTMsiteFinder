@@ -2,8 +2,8 @@ import pandas as pd
 import os
 from tkinter import messagebox
 from Bio import SeqIO
-from PTMsite_Finder import converting_rules, timing_decorator, UserStoppedException
-from PTMsite_Finder.process_PTM import ptm_sum
+from . import converting_rules, timing_decorator, UserStoppedException
+from .process_PTM import ptm_sum
 import concurrent.futures
 
 pd.set_option('display.max_columns', None)
@@ -46,7 +46,7 @@ def converting(num, input_tsv_file, input_quant_file, input_fasta_file, output_n
 
     check_state()
 
-    tsv = pd.read_csv(input_quant_file, sep='\t')
+    tsv = pd.read_parquet(input_quant_file)
 
     # 保留Modified.Amino.Acid列有值的且PTM.Site.Confidence > 0.75的行
     tsv = tsv[tsv['PTM.Site.Confidence'] >= ptm_filter]
